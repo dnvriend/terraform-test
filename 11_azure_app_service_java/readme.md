@@ -1,4 +1,4 @@
-# 10_azure_container_registry
+# 11_azure_app_service_java
 Provision an Azure Container Registry
 
 ## Resources

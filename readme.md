@@ -12,7 +12,7 @@ example:
 - a module that installs vault on an AMI
 - a module that creates self-signed TLS certificates
 - a module that deploys AMIs across an ASG
-- a module that creates an S3 bucket and IAM policies as storage backend\
+- a module that creates an S3 bucket and IAM policies as storage backend
 - a module that configures the security group settings
 - a module that deploys a load balancer
 ```
@@ -139,7 +139,7 @@ If you use either bash or zsh as your command shell, Terraform can provide tab-c
 terraform -install-autocomplete
 ```
 
-## State
+## State & Backends
 In the default configuration, Terraform stores the state in a file in the current working directory where Terraform was run. 
 This is okay for getting started, but when using Terraform in a team it is important for everyone to be working with the same 
 state so that operations will be applied to the same remote objects.
@@ -171,6 +171,35 @@ terraform {
 
 Note: path is Optional, The path to the tfstate file. This defaults to `terraform.tfstate` relative to the root module by default. 
 
+## File Backend
+By default, Terraform stores the state in a file in the current working directory where Terraform was run. There is a problem with 
+the state and plan files and that is security. Sensitive information like eg. credentials is stored in plain text. This means
+that the state and plan file should be protected by means of ACL. Alternatively, a different backend should be used when ACL
+do not provide enough security.
+
+## Http Backend
+Terraform supports an [http backend](https://www.terraform.io/docs/backends/types/http.html). Every time a state needs to be 
+read terraform makes a GET call on the /path specified while setting up the remote config. A save operation corresponds to a 
+POST call on the same /path and a DELETE method call for a delete operation. There are also `lock` operations. 
+
+## S3 Backend
+The [S3 Backend](https://www.terraform.io/docs/backends/types/s3.html) and supports state locking and consistency checking 
+via Dynamo DB, which can be enabled by setting the dynamodb_table field to an existing DynamoDB table name. Also, enable
+versioning on the bucket
+
+## GCS Backend
+The [Google Cloud Storage (GCS) Backend](https://www.terraform.io/docs/backends/types/gcs.html) stores the state as an object 
+in a configurable prefix and bucket on Google Cloud Storage (GCS) and has support for locking.
+
+## Alternative Backends
+Terraform has support for [remote backends](https://www.terraform.io/docs/backends/types/index.html) such as:
+
+- azure storage: no encryption support
+- consul: no encryption support
+- etcd: no encryption support
+- etcdv3: no encryption support
+
+ 
 ## Providers
 Terraform is used to create, manage, and update infrastructure resources such as physical machines, VMs, network switches, containers, and more. 
 Almost any infrastructure type can be represented as a resource in Terraform. Providers provide `resources` but also `data sources` that can be
