@@ -192,13 +192,14 @@ The [Google Cloud Storage (GCS) Backend](https://www.terraform.io/docs/backends/
 in a configurable prefix and bucket on Google Cloud Storage (GCS) and has support for locking.
 
 ## Alternative Backends
-Terraform has support for [remote backends](https://www.terraform.io/docs/backends/types/index.html) such as:
+Terraform has support for [remote backends](https://www.terraform.io/docs/backends/types/index.html), with the generic
+configuration as decribed by [remote state](https://www.terraform.io/docs/providers/terraform/d/remote_state.html):
 
 - azure storage: no encryption support
 - consul: no encryption support
 - etcd: no encryption support
 - etcdv3: no encryption support
-
+- inmemory: no encryption support
  
 ## Providers
 Terraform is used to create, manage, and update infrastructure resources such as physical machines, VMs, network switches, containers, and more. 
@@ -265,6 +266,9 @@ We encourage you to try Habitat for **application management** to see if its app
 - [Why we use Terraform and not Chef, Puppet, Ansible, SaltStack, or CloudFormation](https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c)
 - [How to create reusable infrastructure with Terraform modules](https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d)
 - [How to manage Terraform state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
+
+## Source Code
+- [Terraform on Github](https://github.com/hashicorp/terraform)
 
 ## Video
 - [How to Build Reusable, Composable, Battle tested Terraform Modules - Yevgeniy Brikman](https://www.youtube.com/watch?v=LVgP63BkhKQ&t=1534s)
