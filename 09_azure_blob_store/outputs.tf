@@ -1,8 +1,3 @@
-output "name" {
-  value = "${azurerm_postgresql_server.dev.name}"
+output "blob_store_url" {
+  value = "${azurerm_storage_blob.dev.url}"
 }
-
-output "location" {
-  value = "${azurerm_postgresql_server.dev.location}"
-}
-

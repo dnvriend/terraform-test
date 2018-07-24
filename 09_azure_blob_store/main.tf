@@ -1,12 +1,12 @@
 provider "azurerm" {}
 
 resource "azurerm_resource_group" "dev" {
-  name     = "dnvriend-blob-store-${uuid()}"
+  name     = "dnvriend-blob-store"
   location = "West Europe"
 }
 
 resource "azurerm_storage_account" "dev" {
-  name                     = "dnvriend-storage-account-${uuid()}"
+  name                     = "dnvriendstorageaccount"
   resource_group_name      = "${azurerm_resource_group.dev.name}"
   location                 = "West Europe"
   account_tier             = "Standard"
@@ -20,7 +20,7 @@ resource "azurerm_storage_container" "dev" {
   container_access_type = "private"
 }
 
-resource "azurerm_storage_blob" "testsb" {
+resource "azurerm_storage_blob" "dev" {
   name = "dnvriend-storage-blob-${uuid()}"
 
   resource_group_name    = "${azurerm_resource_group.dev.name}"
