@@ -1,6 +1,22 @@
 # terraform-test
 A small study project on [Terraform](https://www.terraform.io/)
 
+## TL;DR
+The generic workflow is `plan` and then `apply`. Break down your infrastructure into modules each having a specific
+use case in the form of:
+
+```
+a module that (creates | installs | deploys | configures) <does> <something - which is a self contained unit>
+
+example:
+- a module that installs vault on an AMI
+- a module that creates self-signed TLS certificates
+- a module that deploys AMIs across an ASG
+- a module that creates an S3 bucket and IAM policies as storage backend\
+- a module that configures the security group settings
+- a module that deploys a load balancer
+```
+
 ## Introduction
 [Terraform]((https://www.terraform.io/)) is an infrastructure as code software by HashiCorp. It allows users to define 
 a datacenter infrastructure in a high-level configuration language, from which it can create an execution plan to build 
@@ -209,6 +225,22 @@ We encourage you to try Habitat for **application management** to see if its app
 - [Habitat](https://www.habitat.sh/) is useful for managing **application management as code**
 - [Inspec](https://www.inspec.io/) is still useful for managing **compliance policy as code**.
 
+## Resources
+- [Terraform](https://www.terraform.io/)
+- [Terraform documentation](https://www.terraform.io/docs/)
+- [Terraform - Vault Module](https://github.com/hashicorp/terraform-aws-vault)
+- [Terraform Module Registry](https://registry.terraform.io/)
+- [Terraform Registry - AWS Modules](https://registry.terraform.io/browse?provider=aws)
+- [Terraform Registry - GCP Modules](https://registry.terraform.io/browse?provider=google)
+- [Terraform Registry - Azure Modules](https://registry.terraform.io/browse?provider=azurerm)
+- [Why we use Terraform and not Chef, Puppet, Ansible, SaltStack, or CloudFormation](https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c)
+- [How to create reusable infrastructure with Terraform modules](https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d)
+- [How to manage Terraform state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
+
+## Video
+- [How to Build Reusable, Composable, Battle tested Terraform Modules - Yevgeniy Brikman](https://www.youtube.com/watch?v=LVgP63BkhKQ&t=1534s)
+- [Introduction to HashiCorp Terraform - Armon Dadgar](https://www.youtube.com/watch?v=h970ZBgKINg)
+- [Terraform Adoption Stages - Armon Dadgar](https://www.youtube.com/watch?v=FWpCQar9dYg)
+
 ## Book
 - [Terraform: Up and Running: Writing Infrastructure as Code - Yevgeniy Brikman](https://www.amazon.com/Terraform-Running-Writing-Infrastructure-Code/dp/1491977086/ref=sr_1_1) 
-
