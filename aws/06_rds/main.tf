@@ -23,6 +23,7 @@ data "aws_security_group" "default" {
 #####
 module "db" {
   source = "github.com/terraform-aws-modules/terraform-aws-rds"
+}
 
   identifier = "demodb"
 

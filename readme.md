@@ -260,8 +260,18 @@ We encourage you to try Habitat for **application management** to see if its app
 ## Atlantis
 [Atlantis](https://www.runatlantis.io/) is Terraform Automation By Pull Request which makes Terraform changes visible to your whole team.
 
-## Modules
+## Terraform Linter
+A [linter or lint](https://en.wikipedia.org/wiki/Lint_(software)) refers to tools that analyze source code to flag programming errors, bugs, 
+stylistic errors, and suspicious constructs. The term originates from a Unix utility that examined C language source code. The Terraform ecosystem
+also provides linters for example [tflint](https://github.com/wata727/tflint) that can be installed with `brew install tflint`.
+
+## Terraform Modules
+- [Terraform Module Registry](https://registry.terraform.io/)
 - [Terraform AWS Modules](https://github.com/terraform-aws-modules)
+- [Terraform Azure Modules](https://github.com/Azure/terraform-azurerm-network)
+
+## Terraform Providers
+- [Provider Plugins for HashiCorp Terraform](https://github.com/terraform-providers)
 
 ## Resources
 - [Terraform](https://www.terraform.io/)
@@ -276,8 +286,12 @@ We encourage you to try Habitat for **application management** to see if its app
 - [How to manage Terraform state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
 - [Atlantis - Terraform Automation By Pull Request](https://www.youtube.com/watch?v=TmIPWda0IKg)
 
+## Blogs
+- [Where is our “package manager for the cloud?](https://segment.com/blog/where-is-our-package-manager-for-the-cloud/)
+
 ## Source Code
 - [Terraform on Github](https://github.com/hashicorp/terraform)
+- [Terratest on Github](https://github.com/gruntwork-io/terratest)
 
 ## Video
 - [How to Build Reusable, Composable, Battle tested Terraform Modules - Yevgeniy Brikman](https://www.youtube.com/watch?v=LVgP63BkhKQ&t=1534s)
@@ -285,6 +299,8 @@ We encourage you to try Habitat for **application management** to see if its app
 - [Terraform Adoption Stages - Armon Dadgar](https://www.youtube.com/watch?v=FWpCQar9dYg)
 - [Evolving Your Infrastructure with Terraform - Nicki Watt](https://www.youtube.com/watch?v=wgzgVm7Sqlk)
 - [Terraform in your delivery pipeline - Anton Babenko](https://www.youtube.com/watch?v=MmFu-oII9_k)
+- [Terraform Abstractions for Safety and Power - Calvin French Owen](https://www.youtube.com/watch?v=IeweKUdHJc4)
+- [Security At Scale In A Hybrid Cloud Environment - Chandler Allphin](https://www.youtube.com/watch?v=THlpkBioAWQ)
 
 ## Book
 - [Terraform: Up and Running: Writing Infrastructure as Code - Yevgeniy Brikman](https://www.amazon.com/Terraform-Running-Writing-Infrastructure-Code/dp/1491977086/ref=sr_1_1) 
